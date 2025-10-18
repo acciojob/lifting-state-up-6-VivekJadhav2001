@@ -22,3 +22,5 @@ function Child({ todos, handleComplete }) {
     </div>
   );
 }
+
+export default Child

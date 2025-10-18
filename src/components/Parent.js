@@ -35,7 +35,7 @@ function Parent() {
     return (
         <div>
             <h1 className='text-3xl'>Parent Component</h1>
-            <Child todos={todos} handleComplete={handleComplete} setTodos={setTodos} />
+            <Child todos={todos} handleComplete={handleComplete}/>
         </div>
     )
 }
