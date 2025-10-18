@@ -1,43 +1,27 @@
-import React, { useState } from 'react'
-import Child from './Child'
+import React, { useState } from 'react';
+import Child from './Child';
 
 function Parent() {
-    const [todos, setTodos] = useState([
-        {
-            id: 0,
-            task: "Learn React",
-            status: false
-        },
-        {
-            id: 1,
-            task: "Build a React app",
-            status: false
-        },
-        {
-            id: 2,
-            task: "Deploy the React app",
-            status: false
-        }
-    ])
+  const [todos, setTodos] = useState([
+    { id: 0, task: 'Learn React', status: false },
+    { id: 1, task: 'Build a React app', status: false },
+    { id: 2, task: 'Deploy the React app', status: false },
+  ]);
 
-    function handleComplete(id) {
-        // console.log(id)
+  function handleComplete(id) {
+    setTodos(prev =>
+      prev.map(item =>
+        item.id === id ? { ...item, status: true } : item
+      )
+    );
+  }
 
-        const newUpdatedTodo = todos.map((item) => {
-            if (item.id === Number(id)) {
-                return { ...item, status: true };
-            }
-            return item;
-        });
-
-        setTodos(newUpdatedTodo);
-    }
-    return (
-        <div>
-            <h1 className='text-3xl'>Parent Component</h1>
-            <Child todos={todos} handleComplete={handleComplete}/>
-        </div>
-    )
+  return (
+    <div>
+      <h1 className="text-3xl">Parent Component</h1>
+      <Child todos={todos} handleComplete={handleComplete} />
+    </div>
+  );
 }
 
-export default Parent
+export default Parent;

@@ -1,15 +1,15 @@
-import React from 'react'; // ✅ add this
+import React from 'react';
 
 function Child({ todos, handleComplete }) {
   return (
     <div className="m-3.5">
       <h2 className="text-2xl mb-1.5">Child Component</h2>
       <ul>
-        {todos.map((item) => (
+        {todos.map(item => (
           <li key={item.id}>
-            {item.task}
+            {item.task}{' '}
             {item.status ? (
-              <span className="ml-2 text-green-600">(Completed)</span>
+              <span className="text-green-600">(Completed)</span>
             ) : (
               <button
                 onClick={() => handleComplete(item.id)}
