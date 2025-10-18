@@ -1,3 +1,5 @@
+import React from 'react'; // ✅ add this
+
 function Child({ todos, handleComplete }) {
   return (
     <div className="m-3.5">
@@ -23,4 +25,4 @@ function Child({ todos, handleComplete }) {
   );
 }
 
-export default Child
+export default Child;
